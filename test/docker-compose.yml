@@ -1,0 +1,17 @@
+# Signal-K-Server mit fixer Demo-Position (vor Goa) + dieses Plugin.
+# Start:  docker compose up   → http://localhost:3000
+services:
+  signalk:
+    image: signalk/signalk-server:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./sk-config:/home/node/.signalk          # Server-Konfiguration inkl. defaults.json
+      - ..:/plugin-src:ro                          # dieses Plugin (schreibgeschützt)
+    # Beim Start das Plugin ins Config-Verzeichnis installieren, dann den Server starten.
+    entrypoint: ["/bin/sh","-c"]
+    command:
+      - >
+        cd /home/node/.signalk &&
+        npm install /plugin-src --no-save --no-audit --no-fund 2>/dev/null;
+        exec node /home/node/signalk-server/bin/signalk-server -c /home/node/.signalk

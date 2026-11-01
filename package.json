@@ -1,0 +1,22 @@
+{
+  "name": "signalk-neptun-warnings",
+  "version": "0.1.0",
+  "description": "Official navigational warnings (Notices to Mariners) from the Marine-API / Neptun service, shown as notes on the chart in Freeboard-SK and compatible MFDs.",
+  "main": "index.js",
+  "keywords": [
+    "signalk-node-server-plugin",
+    "signalk-category-safety",
+    "signalk",
+    "navigation",
+    "warnings",
+    "notices to mariners",
+    "navtex"
+  ],
+  "author": "rubberduck software",
+  "license": "MIT",
+  "homepage": "https://neptun.marine-api.com",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {}
+}

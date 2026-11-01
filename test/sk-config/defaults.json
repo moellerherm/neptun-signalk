@@ -1,0 +1,13 @@
+{
+  "vessels": {
+    "self": {
+      "name": "Neptun Demo",
+      "navigation": {
+        "position": {
+          "longitude": 73.3,
+          "latitude": 15.4
+        }
+      }
+    }
+  }
+}
