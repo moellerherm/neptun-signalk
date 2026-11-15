@@ -38,6 +38,9 @@ Sea before inland: where sea and inland regions overlap (Kiel: Baltic and Kiel C
 counts. Inland waters at the boat's position (canals, rivers) are included without counting. If you only sail inland,
 your inland region counts as normal.
 
+Border waters: notices from a neighbouring region within 3 nm of the boat are always included, without counting
+(Flensburg Fjord: the Danish shore).
+
 ## Data use
 
 A full update is 30–115 KB (compressed), depending on how busy your waters are. Since 1.0.1 the plugin asks whether
