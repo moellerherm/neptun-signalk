@@ -9,6 +9,6 @@ dieses Plugin aus dem Arbeitsordner.
    Ein Free-Dev- oder API-Schlüssel wird abgewiesen (das Plugin meldet sich mit `X-Neptun-Client`).
 4. **Freeboard-SK** öffnen: http://localhost:3000/@signalk/freeboard-sk/ → Meldungen als Notes, Sperrgebiete als Regions.
 
-Andere Position testen: `sk-config/defaults.json` ändern (`navigation.position`) und neu starten. Achtung: Ein
+Andere Position testen: `sk-config/baseDeltas.json` ändern (Signal K 2 liest `defaults.json` nicht mehr) (`navigation.position`) und neu starten. Achtung: Ein
 Plotter-Schlüssel bindet jedes neue Revier — zum Testen einen eigenen Schlüssel nehmen und danach seine Reviere
 löschen (`DELETE FROM key_revier WHERE khash=…` in `/data/cache/apikeys.db` im Container `neptun-api`).
