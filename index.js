@@ -71,7 +71,7 @@ module.exports = function (app) {
   let timer = null
   let notes = {}       // id -> Signal K note
   let regions = {}     // id -> Signal K region
-  let lastGood = null  // { ts, warnings, plotter }
+  let lastGood = null  // { ts, warnings, plotter, etag }
   let alarmed = new Set()
   let opts = {}
 
@@ -310,7 +310,11 @@ module.exports = function (app) {
     let res
     try {
       res = await fetch(url, {
-        headers: { Accept: 'application/json', Authorization: 'Bearer ' + opts.apiKey, 'X-Neptun-Client': CLIENT },
+        // If-None-Match: unchanged warnings come back as 304 without a body — saves most of the data on board.
+        headers: Object.assign(
+          { Accept: 'application/json', Authorization: 'Bearer ' + opts.apiKey, 'X-Neptun-Client': CLIENT },
+          lastGood && lastGood.etag && lastGood.url === url ? { 'If-None-Match': lastGood.etag } : {},
+        ),
         signal: AbortSignal.timeout(30000),
       })
     } catch (e) {
@@ -321,6 +325,15 @@ module.exports = function (app) {
       } else {
         app.setPluginError('Neptun: ' + (e && e.message ? e.message : e))
       }
+      return
+    }
+    if (res.status === 304 && lastGood) {
+      lastGood.ts = Date.now()
+      saveCache(lastGood)
+      notify(STATUS_PATH, 'normal', '')
+      proximity(pos, lastGood.warnings)
+      showStatus(lastGood.plotter, lastGood.ts)
+      app.debug('unchanged (304) %s', url)
       return
     }
     let body = null
@@ -340,7 +353,7 @@ module.exports = function (app) {
     const list = Array.isArray(body && body.warnings) ? body.warnings : []
     const attribution = body && body.attribution
     for (const w of list) if (!w.attribution && attribution) w.attribution = attribution
-    lastGood = { ts: Date.now(), warnings: list, plotter: body.plotter || null }
+    lastGood = { ts: Date.now(), warnings: list, plotter: body.plotter || null, etag: res.headers.get('etag'), url }
     saveCache(lastGood)
     build(list)
     notify(STATUS_PATH, 'normal', '')

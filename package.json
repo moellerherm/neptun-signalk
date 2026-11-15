@@ -1,6 +1,6 @@
 {
   "name": "signalk-neptun-warnings",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Official navigational warnings and restricted areas from Neptun on your chart: notices to mariners, coastal and NAVAREA warnings as Signal K notes and regions, translated, with offline cache and proximity alarm.",
   "main": "index.js",
   "files": [
