@@ -1,20 +1,38 @@
 {
   "name": "signalk-neptun-warnings",
-  "version": "0.1.0",
-  "description": "Official navigational warnings (Notices to Mariners) from the Marine-API / Neptun service, shown as notes on the chart in Freeboard-SK and compatible MFDs.",
+  "version": "1.0.0",
+  "description": "Official navigational warnings and restricted areas from Neptun on your chart: notices to mariners, coastal and NAVAREA warnings as Signal K notes and regions, translated, with offline cache and proximity alarm.",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
   "keywords": [
     "signalk-node-server-plugin",
-    "signalk-category-safety",
+    "signalk-category-notifications",
+    "signalk-category-chart-plotters",
     "signalk",
     "navigation",
-    "warnings",
     "notices to mariners",
-    "navtex"
+    "navigational warnings",
+    "navtex",
+    "navarea",
+    "freeboard"
   ],
-  "author": "rubberduck software",
+  "signalk": {
+    "displayName": "Neptun Warnings"
+  },
+  "author": "rubberduck software <ahoi@rubberduck-software.com>",
   "license": "MIT",
-  "homepage": "https://neptun.marine-api.com",
+  "homepage": "https://neptun.marine-api.com/signalk/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moellerherm/neptun-signalk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/moellerherm/neptun-signalk/issues"
+  },
   "engines": {
     "node": ">=18"
   },
