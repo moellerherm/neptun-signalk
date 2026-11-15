@@ -5,7 +5,7 @@ dieses Plugin aus dem Arbeitsordner.
 
 1. `docker compose up`
 2. http://localhost:3000 öffnen → Admin-Konto anlegen.
-3. **Server → Plugin Config → Neptun Warnings**: aktivieren, **Plotter-Schlüssel** eintragen, speichern.
+3. **Server → Plugin Config → Navigational Warnings & Notices to Mariners**: aktivieren, **Plotter-Schlüssel** eintragen, speichern.
    Ein Free-Dev- oder API-Schlüssel wird abgewiesen (das Plugin meldet sich mit `X-Neptun-Client`).
 4. **Freeboard-SK** öffnen: http://localhost:3000/@signalk/freeboard-sk/ → Meldungen als Notes, Sperrgebiete als Regions.
 

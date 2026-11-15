@@ -1,4 +1,4 @@
-# Neptun Warnings for Signal K
+# Navigational Warnings & Notices to Mariners for Signal K
 
 Official navigational warnings and restricted areas from [Neptun](https://neptun.marine-api.com/signalk/) on your
 chart: notices to mariners, coastal and NAVAREA warnings, closures of fairways, locks and bridges. Translated into
@@ -45,7 +45,7 @@ anything has changed; if not, the answer is empty. In practice that is a few MB 
 
 ## Install
 
-In your Signal K server (version 2 or later): **App Store → search “Neptun Warnings” → Install**, restart the server.
+In your Signal K server (version 2 or later): **App Store → search “notices to mariners” or “navigational warnings” → Install**, restart the server.
 
 Or by hand:
 
@@ -55,7 +55,7 @@ npm install signalk-neptun-warnings
 # restart the Signal K server
 ```
 
-Then **Server → Plugin Config → Neptun Warnings**: enable, paste your plotter key, save.
+Then **Server → Plugin Config → Navigational Warnings & Notices to Mariners**: enable, paste your plotter key, save.
 
 ## Settings
 
@@ -94,6 +94,8 @@ Plugin: MIT. Warning texts: the issuing authorities; every note carries the sour
 
 ## Changes
 
+- **1.0.2** (15 Nov 2026): plugin renamed to “Navigational Warnings & Notices to Mariners” so the App Store
+  search finds it by what it does.
 - **1.0.1** (15 Nov 2026): unchanged warnings are not downloaded again (`If-None-Match`/ETag → 304), which saves most
   of the data on board.
 - **1.0.0** (15 Nov 2026): first release — notes and regions, offline cache, proximity alarm, plotter keys.

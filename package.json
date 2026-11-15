@@ -1,7 +1,7 @@
 {
   "name": "signalk-neptun-warnings",
-  "version": "1.0.1",
-  "description": "Official navigational warnings and restricted areas from Neptun on your chart: notices to mariners, coastal and NAVAREA warnings as Signal K notes and regions, translated, with offline cache and proximity alarm.",
+  "version": "1.0.2",
+  "description": "Navigational warnings and notices to mariners (NtM) on your chart: coastal (NAVTEX) and NAVAREA warnings, closures of fairways, locks and bridges, firing and restricted areas — as Signal K notes and regions, translated, with offline cache and proximity alarm. Data: Neptun by rubberduck software.",
   "main": "index.js",
   "files": [
     "index.js",
@@ -21,7 +21,7 @@
     "freeboard"
   ],
   "signalk": {
-    "displayName": "Neptun Warnings"
+    "displayName": "Navigational Warnings & Notices to Mariners"
   },
   "author": "rubberduck software <ahoi@rubberduck-software.com>",
   "license": "MIT",

@@ -77,7 +77,7 @@ module.exports = function (app) {
 
   const plugin = {
     id: 'signalk-neptun-warnings',
-    name: 'Neptun Warnings',
+    name: 'Navigational Warnings & Notices to Mariners',
     description: 'Official navigational warnings and restricted areas from Neptun on your chart',
   }
 
