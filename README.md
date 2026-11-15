@@ -34,6 +34,15 @@ You don't pick anything. A region is bound on the first request from where your 
 for 30 days becomes free again, so you can sail on. When your plan is full and you enter a new region, the plugin
 tells you which regions are bound and when the first one becomes free.
 
+Sea before inland: where sea and inland regions overlap (Kiel: Baltic and Kiel Canal), the sea region is the one that
+counts. Inland waters at the boat's position (canals, rivers) are included without counting. If you only sail inland,
+your inland region counts as normal.
+
+## Data use
+
+A full update is 30–115 KB (compressed), depending on how busy your waters are. Since 1.0.1 the plugin asks whether
+anything has changed; if not, the answer is empty. In practice that is a few MB per month on board.
+
 ## Install
 
 In your Signal K server (version 2 or later): **App Store → search “Neptun Warnings” → Install**, restart the server.
@@ -82,3 +91,9 @@ Freeboard-SK from your desk.
 ## Licence
 
 Plugin: MIT. Warning texts: the issuing authorities; every note carries the source and its attribution.
+
+## Changes
+
+- **1.0.1** (15 Nov 2026): unchanged warnings are not downloaded again (`If-None-Match`/ETag → 304), which saves most
+  of the data on board.
+- **1.0.0** (15 Nov 2026): first release — notes and regions, offline cache, proximity alarm, plotter keys.
