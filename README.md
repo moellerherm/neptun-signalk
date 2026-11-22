@@ -18,14 +18,16 @@ your language, shown as points and areas in Freeboard-SK and on B&G, Simrad and 
 
 ## Pricing
 
-The plugin is free and open source (MIT). The data needs a **plotter key**:
+This plugin is **Neptun K-Boating**. It is free and open source (MIT). The data needs a **Neptun Boating key** — the
+same key also works in **Neptun P-Boating**, the view for chartplotters and tablets (https://neptun.marine-api.com/plotter/app/):
 
-| Plan | Regions | Price |
-|---|---|---|
-| Home waters | 1 | €1.99 / month |
-| Cruising | 3, worldwide | €3.99 / month |
+| Plan | Regions | Monthly | Yearly |
+|---|---|---|---|
+| Home waters | 1 | €1.99 | €19 |
+| Cruising | 3 | €3.99 | €39 |
+| Worldwide | all | €6.99 | €59 |
 
-Both start with **30 days free, no card needed**. If no payment method is added by then, access simply ends.
+Every plan starts with **30 days free, no card needed**. If no payment method is added by then, access simply ends.
 Get a key: **https://neptun.marine-api.com/signalk/**
 
 ### How regions count
@@ -58,13 +60,13 @@ npm install signalk-neptun-warnings
 # restart the Signal K server
 ```
 
-Then **Server → Plugin Config → Navigational Warnings & Notices to Mariners**: enable, paste your plotter key, save.
+Then **Server → Plugin Config → Navigational Warnings & Notices to Mariners**: enable, paste your Neptun Boating key, save.
 
 ## Settings
 
 | Setting | Default | Meaning |
 |---|---|---|
-| `apiKey` | — | your plotter key (`mapi_…`) |
+| `apiKey` | — | your Neptun Boating key (`mapi_…`) |
 | `lang` | `en` | language of the warnings (`en` or `de`) |
 | `radiusKm` | 150 | radius around the vessel, 10–200 km |
 | `intervalMin` | 30 | update interval, at least 15 minutes |
@@ -97,6 +99,8 @@ Plugin: MIT. Warning texts: the issuing authorities; every note carries the sour
 
 ## Changes
 
+- **1.0.3** (not yet published): Neptun K-Boating — one Neptun Boating key for the plugin and Neptun P-Boating;
+  new plans Worldwide and yearly prices; texts and sign-up link updated.
 - **1.0.2** (15 Nov 2026): plugin renamed to “Navigational Warnings & Notices to Mariners” so the App Store
   search finds it by what it does.
 - **1.0.1** (15 Nov 2026): unchanged warnings are not downloaded again (`If-None-Match`/ETag → 304), which saves most

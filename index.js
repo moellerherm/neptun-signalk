@@ -19,7 +19,7 @@ const VERSION = require('./package.json').version
 
 const API_PATH = '/v1/warnings'
 const CLIENT = 'signalk-neptun-warnings/' + VERSION
-const SIGNUP = 'https://neptun.marine-api.com/signalk/'
+const SIGNUP = 'https://neptun.marine-api.com/plotter/#preise'
 const STATUS_PATH = 'notifications.neptunWarnings.status'
 const ALARM_PATH = 'notifications.navigation.neptunWarning.'
 
@@ -29,9 +29,9 @@ const TEXT = {
     status: (n, a, r, t) => `${n} warnings · ${a} areas${r} · updated ${t}`,
     offline: (age) => `Offline — showing the last update from ${age} ago`,
     until: 'until',
-    noKey: 'No plotter key set. Get one at ' + SIGNUP,
-    badKey: 'Plotter key not valid or no longer active (trial ended?). Manage your subscription at ' + SIGNUP,
-    needPlotter: 'This key is not a plotter key. The plugin needs a plotter key: ' + SIGNUP,
+    noKey: 'No Neptun Boating key set. Get one at ' + SIGNUP,
+    badKey: 'Neptun Boating key not valid or no longer active (trial ended?). Manage your subscription at ' + SIGNUP,
+    needPlotter: 'This key is not a Neptun Boating key. Neptun K-Boating needs one: ' + SIGNUP,
     limit: (d) => `Your plan covers ${d.limit} region${d.limit > 1 ? 's' : ''} (${names(d)}). “${d.region_name}” ` +
       `would be one more. ${frees(d, 'en')}Need more regions? ${SIGNUP}`,
     quota: 'Too many requests — the plugin will try again at the next interval.',
@@ -43,9 +43,9 @@ const TEXT = {
     status: (n, a, r, t) => `${n} Meldungen · ${a} Flächen${r} · Stand ${t}`,
     offline: (age) => `Offline — zeige den letzten Stand von vor ${age}`,
     until: 'bis',
-    noKey: 'Kein Plotter-Schlüssel eingetragen. Schlüssel holen: ' + SIGNUP,
-    badKey: 'Plotter-Schlüssel ungültig oder nicht mehr aktiv (Probezeit abgelaufen?). Abo verwalten: ' + SIGNUP,
-    needPlotter: 'Das ist kein Plotter-Schlüssel. Das Plugin braucht einen Plotter-Schlüssel: ' + SIGNUP,
+    noKey: 'Kein Neptun-Boating-Schlüssel eingetragen. Schlüssel holen: ' + SIGNUP,
+    badKey: 'Neptun-Boating-Schlüssel ungültig oder nicht mehr aktiv (Probezeit abgelaufen?). Abo verwalten: ' + SIGNUP,
+    needPlotter: 'Das ist kein Neptun-Boating-Schlüssel. Neptun K-Boating braucht einen: ' + SIGNUP,
     limit: (d) => `Dein Plan umfasst ${d.limit === 1 ? '1 Revier' : d.limit + ' Reviere'} (${names(d)}). ` +
       `„${d.region_name}“ wäre eines mehr. ${frees(d, 'de')}Mehr Reviere: ${SIGNUP}`,
     quota: 'Zu viele Abrufe — das Plugin versucht es beim nächsten Intervall erneut.',
@@ -87,8 +87,8 @@ module.exports = function (app) {
     properties: {
       apiKey: {
         type: 'string',
-        title: 'Neptun plotter key (mapi_…)',
-        description: '30 days free, then 1 region €1.99 or 3 regions €3.99 a month: ' + SIGNUP,
+        title: 'Neptun Boating key (mapi_…)',
+        description: '30 days free, then 1 region €1.99, 3 regions €3.99 or worldwide €6.99 a month (yearly from €19): ' + SIGNUP,
       },
       lang: { type: 'string', title: 'Language of the warnings', enum: ['en', 'de'], default: 'en' },
       radiusKm: {
