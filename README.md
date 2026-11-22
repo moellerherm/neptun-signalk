@@ -99,6 +99,7 @@ Plugin: MIT. Warning texts: the issuing authorities; every note carries the sour
 
 ## Changes
 
+- **1.0.4** (22 Nov 2026): README only — a payment method is now added at checkout; charged only after the 30-day trial.
 - **1.0.3** (22 Nov 2026): Neptun K-Boating — one Neptun Boating key for the plugin and Neptun P-Boating;
   new plans Worldwide and yearly prices; texts and sign-up link updated.
 - **1.0.2** (15 Nov 2026): plugin renamed to “Navigational Warnings & Notices to Mariners” so the App Store
