@@ -27,7 +27,7 @@ same key also works in **Neptun P-Boating**, the view for chartplotters and tabl
 | Cruising | 3 | €3.99 | €39 |
 | Worldwide | all | €6.99 | €59 |
 
-Every plan starts with **30 days free, no card needed**. If no payment method is added by then, access simply ends.
+Every plan starts with **30 days free**. You add a payment method at checkout and are charged only after the trial; cancel any time before.
 Get a key: **https://neptun.marine-api.com/signalk/**
 
 ### How regions count
